@@ -1,0 +1,1 @@
+create table "car"("Id" serial,"Name" varchar(300),"Model" int);

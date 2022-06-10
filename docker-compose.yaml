@@ -1,0 +1,40 @@
+version: "2"  # optional since v1.27.0
+services:
+  # web:
+  #   image: nginx
+  #   ports:
+  #     - "8090:80"
+  backend:
+    build: ./backend/
+    ports:
+      - "8070:80"
+  masterdb:
+    # image: bitnami/postgresql
+    image: pg
+    # build: ./db/
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=master
+      - POSTGRESQL_REPLICATION_USER=ibrahim
+      - POSTGRESQL_REPLICATION_PASSWORD=ibrahim123
+      - POSTGRESQL_USERNAME=dbuser
+      - POSTGRESQL_PASSWORD=dbuser123
+      - POSTGRESQL_DATABASE=test
+  slavedb:
+    image: bitnami/postgresql
+    # image: pg
+    # build: ./db/
+    ports:
+      - "5433:5432"
+    depends_on:
+      - masterdb
+    environment:
+      - POSTGRESQL_REPLICATION_USER=ibrahim
+      - POSTGRESQL_REPLICATION_PASSWORD=ibrahim123
+      - POSTGRESQL_REPLICATION_MODE=slave
+      - POSTGRESQL_MASTER_HOST=masterdb
+      - POSTGRESQL_MASTER_PORT_NUMBER=5432
+      - POSTGRESQL_PASSWORD=123
+      # - POSTGRESQL_USERNAME=sa  # this was my problem
+  

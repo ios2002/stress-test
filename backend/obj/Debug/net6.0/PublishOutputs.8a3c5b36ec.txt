@@ -1,0 +1,12 @@
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/backend
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/appsettings.Development.json
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/appsettings.json
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/backend.dll
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/backend.deps.json
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/backend.runtimeconfig.json
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/backend.pdb
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/Microsoft.OpenApi.dll
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/Npgsql.dll
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/Swashbuckle.AspNetCore.Swagger.dll
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/leo/Projects/stress-test/backend/bin/Debug/net6.0/publish/Swashbuckle.AspNetCore.SwaggerUI.dll

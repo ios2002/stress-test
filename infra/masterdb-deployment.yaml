@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: masterdb-service
+  name: masterdb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: masterdb-service
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: masterdb-service
+    spec:
+      containers:
+        - env:
+            - name: POSTGRESQL_DATABASE
+              value: test
+            - name: POSTGRESQL_PASSWORD
+              value: dbuser123
+            - name: POSTGRESQL_REPLICATION_MODE
+              value: master
+            - name: POSTGRESQL_REPLICATION_PASSWORD
+              value: ibrahim123
+            - name: POSTGRESQL_REPLICATION_USER
+              value: ibrahim
+            - name: POSTGRESQL_USERNAME
+              value: dbuser
+          image: ibro2002/masterpg
+          name: masterdb-deployment
+          ports:
+            - containerPort: 5432
+          resources: {}
+      restartPolicy: Always
+status: {}
